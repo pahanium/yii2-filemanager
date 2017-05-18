@@ -1,6 +1,6 @@
 <?php
 
-namespace pendalf89\filemanager\models;
+namespace pahanium\filemanager\models;
 
 use Yii;
 
