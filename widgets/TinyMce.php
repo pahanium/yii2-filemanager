@@ -5,7 +5,7 @@ use Yii;
 use yii\widgets\InputWidget;
 use yii\web\JsExpression;
 use pahanium\filemanager\assets\FileInputAsset;
-use perdalf89\tinymce\TinyMce as TinyMceWidget;
+use pendalf89\tinymce\TinyMce as TinyMceWidget;
 use yii\helpers\Url;
 
 class TinyMce extends InputWidget
