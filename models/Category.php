@@ -88,7 +88,7 @@ class Category extends ActiveRecord
     {
         return self::find()
             ->select(["CONCAT(REPEAT('--', depth), ' ', name) AS name", 'id'])
-            ->orderBy('lft')
+            ->orderBy('tree, lft')
             ->indexBy('id')
             ->column();
     }
