@@ -59,6 +59,8 @@ $bundle = FilemanagerAsset::register($this);
         ],
     ]) ?>
 
+        <?= $form->field($model, 'category_id')->dropDownList(\pahanium\filemanager\models\Category::getTreeList(), ['prompt' => Module::t('main', 'Select category...')]) ?>
+
     <?php if ($model->isImage()) : ?>
         <?= $form->field($model, 'alt')->textInput(['class' => 'form-control input-sm']); ?>
     <?php endif; ?>

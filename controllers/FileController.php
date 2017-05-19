@@ -67,10 +67,10 @@ class FileController extends Controller
         ]);
     }
 
-    public function actionUploadmanager()
+    public function actionUploadmanager($category_id = null)
     {
         $this->layout = '@vendor/pahanium/yii2-filemanager/views/layouts/main';
-        return $this->render('uploadmanager', ['model' => new Mediafile()]);
+        return $this->render('uploadmanager', ['model' => new Mediafile(), 'category_id' => $category_id]);
     }
 
     /**
@@ -85,6 +85,7 @@ class FileController extends Controller
         $routes = $this->module->routes;
         $rename = $this->module->rename;
 	    $tagIds = Yii::$app->request->post('tagIds');
+        $model->category_id = Yii::$app->request->post('category_id');
 
 	    if ($tagIds !== 'undefined') {
 		    $model->setTagIds(explode(',', $tagIds));

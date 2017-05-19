@@ -27,6 +27,7 @@ use Imagine\Image\ImageInterface;
  * @property string $thumbs
  * @property integer $created_at
  * @property integer $updated_at
+ * @property integer $category_id
  * @property Owners[] $owners
  * @property Tag[] $tags
  */
@@ -105,7 +106,7 @@ class Mediafile extends ActiveRecord
         return [
             [['filename', 'type', 'url', 'size'], 'required'],
             [['url', 'alt', 'description', 'thumbs'], 'string'],
-            [['created_at', 'updated_at', 'size'], 'integer'],
+            [['created_at', 'updated_at', 'size', 'category_id'], 'integer'],
             [['filename', 'type'], 'string', 'max' => 255],
             [['file'], 'file'],
             [['tagIds'], 'safe'],
@@ -129,6 +130,7 @@ class Mediafile extends ActiveRecord
             'created_at' => Module::t('main', 'Created'),
             'updated_at' => Module::t('main', 'Updated'),
             'tagIds' => Module::t('main', 'Tags'),
+            'category_id' => Module::t('main', 'Category'),
         ];
     }
 

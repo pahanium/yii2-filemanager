@@ -23,6 +23,7 @@ $this->params['moduleBundle'] = FilemanagerAsset::register($this);
     <?= ListView::widget([
         'dataProvider' => $dataProvider,
         'layout' => $searchForm . '<div class="items">{items}</div>{pager}',
+        'showOnEmpty' => true,
         'itemOptions' => ['class' => 'item'],
         'itemView' => function ($model, $key, $index, $widget) {
                     return Html::a(
@@ -36,7 +37,7 @@ $this->params['moduleBundle'] = FilemanagerAsset::register($this);
 
     <div class="dashboard">
         <p><?= Html::a('<span class="glyphicon glyphicon-upload"></span> ' . Module::t('main', 'Upload manager'),
-                ['file/uploadmanager'], ['class' => 'btn btn-default']) ?></p>
+                ['file/uploadmanager', 'category_id' => $model->category_id], ['class' => 'btn btn-default']) ?></p>
         <div id="fileinfo">
 
         </div>

@@ -25,7 +25,7 @@ class MediafileSearch extends Mediafile
     public function rules()
     {
         return [
-            [['tagIds'], 'safe'],
+            [['tagIds', 'category_id'], 'safe'],
         ];
     }
 
@@ -51,6 +51,8 @@ class MediafileSearch extends Mediafile
         if ($this->tagIds) {
             $query->joinWith('tags')->andFilterWhere(['in', Tag::tableName() . '.id', $this->tagIds]);
         }
+
+        $query->andFilterWhere(['category_id' => $this->category_id]);
 
         return $dataProvider;
     }

@@ -16,7 +16,7 @@ $assetPath = FilemanagerAsset::register($this)->baseUrl;
     <h1><?= Module::t('main', 'File manager module'); ?></h1>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
 
             <div class="text-center">
                 <h2>
@@ -29,7 +29,20 @@ $assetPath = FilemanagerAsset::register($this)->baseUrl;
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
+
+            <div class="text-center">
+                <h2>
+                    <?= Html::a(Module::t('main', 'Categories'), ['category/index']) ?>
+                </h2>
+                <?= Html::a(
+                    Html::img($assetPath . '/images/categories.png', ['alt' => 'Files'])
+                    , ['category/index']
+                ) ?>
+            </div>
+        </div>
+
+        <div class="col-md-4">
 
             <div class="text-center">
                 <h2>
